@@ -1,0 +1,29 @@
+.demoTable td:last-child {
+    min-width: 90px;
+}
+
+/** Editable table
+------------------------- */
+
+.editable-table > tbody > tr > td {
+    padding: 4px
+}
+.editable-text {
+    padding-left: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    display: inline-block;
+}
+.editable-table tbody > tr > td > .controls {
+//width: 100%
+}
+.editable-input {
+    padding-left: 3px;
+}
+.editable-input.input-sm {
+    height: 30px;
+    font-size: 14px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRhYmxlLWRlbW8uY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksZ0JBQWdCO0NBQ25COztBQUVEOzRCQUM0Qjs7QUFFNUI7SUFDSSxZQUFZO0NBQ2Y7QUFDRDtJQUNJLGtCQUFrQjtJQUNsQixpQkFBaUI7SUFDakIsb0JBQW9CO0lBQ3BCLHNCQUFzQjtDQUN6QjtBQUNEO0FBQ0EsYUFBYTtDQUNaO0FBQ0Q7SUFDSSxrQkFBa0I7Q0FDckI7QUFDRDtJQUNJLGFBQWE7SUFDYixnQkFBZ0I7SUFDaEIsaUJBQWlCO0lBQ2pCLG9CQUFvQjtDQUN2QiIsImZpbGUiOiJ0YWJsZS1kZW1vLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5kZW1vVGFibGUgdGQ6bGFzdC1jaGlsZCB7XG4gICAgbWluLXdpZHRoOiA5MHB4O1xufVxuXG4vKiogRWRpdGFibGUgdGFibGVcbi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gKi9cblxuLmVkaXRhYmxlLXRhYmxlID4gdGJvZHkgPiB0ciA+IHRkIHtcbiAgICBwYWRkaW5nOiA0cHhcbn1cbi5lZGl0YWJsZS10ZXh0IHtcbiAgICBwYWRkaW5nLWxlZnQ6IDRweDtcbiAgICBwYWRkaW5nLXRvcDogNHB4O1xuICAgIHBhZGRpbmctYm90dG9tOiA0cHg7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xufVxuLmVkaXRhYmxlLXRhYmxlIHRib2R5ID4gdHIgPiB0ZCA+IC5jb250cm9scyB7XG4vL3dpZHRoOiAxMDAlXG59XG4uZWRpdGFibGUtaW5wdXQge1xuICAgIHBhZGRpbmctbGVmdDogM3B4O1xufVxuLmVkaXRhYmxlLWlucHV0LmlucHV0LXNtIHtcbiAgICBoZWlnaHQ6IDMwcHg7XG4gICAgZm9udC1zaXplOiAxNHB4O1xuICAgIHBhZGRpbmctdG9wOiA0cHg7XG4gICAgcGFkZGluZy1ib3R0b206IDRweDtcbn0iXX0= */
