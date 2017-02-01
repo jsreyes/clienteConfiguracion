@@ -22,12 +22,10 @@ angular.module('javierApp')
         columnDefs: [
           //{ field: 'Id',  enableCellEdit: false, maxWidth:50 },
           { field: 'Nombre', cellTemplate: tmpl},
-          { field: 'Variable', cellTemplate: tmpl},
+          { field: 'Descripcion', cellTemplate: tmpl},
           { field: 'Url', cellTemplate: tmpl},
-          { field: 'Orden', cellTemplate: tmpl, maxWidth:60},
           { field: 'Layout', cellTemplate: tmpl},
-          { field: 'Dominio', cellTemplate: tmpl},
-          { field: 'Aplicacion.Nombre',  displayName: 'App', cellTemplate: tmpl, maxWidth:90},
+          { field: 'Aplicacion.Nombre',  displayName: 'App', cellTemplate: tmpl},
           {field: 'Acciones', 
           cellTemplate: '<button class="btn btn-danger btn-circle" ng-click="grid.appScope.deleteRow(row)"><i class="glyphicon glyphicon-trash"></i></button>&nbsp;<button type="button" class="btn btn-success btn-circle" ng-click="grid.appScope.actualizar(row)"><i class="glyphicon glyphicon-pencil"></i></button>', maxWidth:82}
         ],
@@ -50,7 +48,7 @@ angular.module('javierApp')
                 .then(function(response) {
 
                    //Condicional
-                  if (response === "OK"){
+                  if (response.data === "OK"){
                         //$scope.gridOptions1.data.splice(index, 1); Sirve para hacer el borrado desde la vista
                         alert("El menu se ha borrado exitosamente");
                         //Función que obtiene todas las aplicaciones

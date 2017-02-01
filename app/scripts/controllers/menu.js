@@ -11,7 +11,7 @@ angular.module('javierApp')
     //Variable que contiene el arreglo de los JSON, con los menus respectivos
     $scope.menu_service = [];
 
-    $http.get('http://127.0.0.1:8081/v1/perfil_x_menu_opcion/arbolMenus/Administrador configuración')
+    $http.get('http://127.0.0.1:8081/v1/menu_opcion_padre/ArbolMenus/Administrador configuración')
        .then(function(response) {      
           $scope.menu_service = response.data;
           recorrerArbol($scope.menu_service, "");

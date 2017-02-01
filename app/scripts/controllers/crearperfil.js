@@ -57,7 +57,7 @@ angular.module('javierApp')
 			$scope.dataForTheTree = [];
 
 			//Carga los menus por aplicación
-			$http.get('http://127.0.0.1:8081/v1/menu_opcion_padre/MenusPorAplicacion/' + $scope.aplicacion.Id +'').then(function(response) {
+			$http.get('http://127.0.0.1:8081/v1/perfil_x_menu_opcion/MenusPorAplicacion/' + $scope.aplicacion.Id +'').then(function(response) {
 				$scope.dataForTheTree = response.data;
 		    });
     	}
@@ -68,7 +68,6 @@ angular.module('javierApp')
 	  $scope.confirmar = function(){
 	    var json = {};
 	    json.Nombre=$scope.perfil.nombre;
-	    json.Dominio= $scope.perfil.dominio;
 	    json.Aplicacion= $scope.aplicacion;
 	     
 	    $http.post('http://127.0.0.1:8081/v1/perfil/',json)

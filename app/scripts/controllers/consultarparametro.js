@@ -36,20 +36,26 @@ angular.module('javierApp')
 
 
       //Función para borrar un registro de la tabla  
-      $scope.deleteRow = function(row) { 
-        //Indice en la tabla
-       var index = $scope.gridOptions1.data.indexOf(row.entity);
-       //$scope.gridOptions1.data.splice($scope.hp, 1);
-      
-       $http.delete('http://127.0.0.1:8081/v1/parametro/'+row.entity.Id)
-                .then(function(response) {
-                      alert("El parametro se ha borrado exitosamente");
-                      //Se obtienen los datos por medio del metodo Get
-                      $http.get('http://127.0.0.1:8081/v1/parametro/?limit=0')
-                      .then(function(response) {
-                        $scope.gridOptions1.data = response.data;
-                      });
-                });
+        $scope.deleteRow = function(row) { 
+               var index = $scope.gridOptions1.data.indexOf(row.entity);
+               
+               //Borra la aplicación de la BD
+               $http.delete('http://127.0.0.1:8081/v1/parametro/' + row.entity.Id)
+                  .then(function(response) {
+
+                     //Condicional
+                    if (response.data === "OK"){
+                          //$scope.gridOptions1.data.splice(index, 1); Sirve para hacer el borrado desde la vista
+                          alert("El parámetro se ha borrado exitosamente");
+                          //Función que obtiene todas las aplicaciones
+                          $http.get('http://127.0.0.1:8081/v1/parametro/?limit=0')
+                            .then(function(response) {
+                                $scope.gridOptions1.data = response.data;
+                             });
+                    }else{
+                          alert("No se puede eliminar el parámetro");
+                    }                      
+                  });
         };
 
       //Función para actualizar

@@ -59,7 +59,7 @@ angular.module('javierApp')
 			$scope.dataForTheTree = [];
 
 			//Carga los menus por aplicación
-			$http.get('http://127.0.0.1:8081/v1/menu_opcion_padre/MenusPorAplicacion/' + $scope.aplicacion.Id +'').then(function(response) {
+			$http.get('http://127.0.0.1:8081/v1/perfil_x_menu_opcion/MenusPorAplicacion/' + $scope.aplicacion.Id +'').then(function(response) {
 				if (response.data ==null) {
 					$scope.dataForTheTree = [];
 				}else{
@@ -73,11 +73,9 @@ angular.module('javierApp')
 	  $scope.confirmar = function(){
 	  	//console.log(padre);
 	    var json = {"Nombre":$scope.menu.nombre,
-	    			"Variable":$scope.menu.variable,
+	    			"Descripcion":$scope.menu.descripcion,
 	    			"Url": $scope.menu.url,
-	    			"Orden": parseInt($scope.menu.orden),
 	    			"Layout":$scope.menu.layout,
-	                "Dominio": $scope.menu.dominio,
 	                "Aplicacion": {"Id":$scope.aplicacion.Id}};
 
 
@@ -143,9 +141,4 @@ angular.module('javierApp')
             form.$setUntouched();
           }
   		};
-
-  		console.log($scope.menu_padre);
-
-  		
-
-  });
+ });

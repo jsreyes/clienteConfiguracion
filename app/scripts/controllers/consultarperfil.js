@@ -41,7 +41,6 @@ angular.module('javierApp')
         enableFiltering: true,
         columnDefs: [
           { field: 'Nombre',  cellTemplate: tmpl },
-          { field: 'Dominio',  cellTemplate: tmpl},
           { field: 'Aplicacion.Nombre',  displayName: 'Aplicación',  cellTemplate: tmpl},
           { field: 'Acciones', 
           cellTemplate: '<button class="btn btn-danger btn-circle" ng-click="grid.appScope.deleteRow(row)" type="submit"><i class="glyphicon glyphicon-trash"></i></button>&nbsp;<button type="button" class="btn btn-success btn-circle" ng-click="grid.appScope.actualizar(row); change_state()" ng-show="on_off"><i class="glyphicon glyphicon-pencil"></i></button>&nbsp;<button type="button" class="btn btn-success btn-circle" ng-click="grid.appScope.actualizar(row);change_state()" ng-hide="on_off"><i class="glyphicon glyphicon-ok"></i></button>&nbsp;<button type="button" class="btn btn-primary btn-circle" ng-click="grid.appScope.visualizar(row);grid.appScope.showAdvanced($event, row)" data-toggle="modal" data-target="#exampleModalLong"><i class="glyphicon glyphicon-cog"></i></button>'}
@@ -65,9 +64,9 @@ angular.module('javierApp')
                 .then(function(response) {
 
                    //Condicional
-                  if (response === "OK"){
+                  if (response.data === "OK"){
                         //$scope.gridOptions1.data.splice(index, 1); Sirve para hacer el borrado desde la vista
-                        alert("La perfil se ha borrado exitosamente");
+                        alert("El perfil se ha borrado exitosamente");
                         //Función que obtiene todas las aplicaciones
                         $http.get('http://127.0.0.1:8081/v1/perfil/?limit=0')
                           .then(function(response) {
@@ -106,7 +105,7 @@ angular.module('javierApp')
           console.log(row.entity.Aplicacion.Id);
 
           //Obtiene los menús asociados a ese perfil
-         $http.get('http://127.0.0.1:8081/v1/perfil_x_menu_opcion/arbolMenus/'+row.entity.Nombre+'')
+         $http.get('http://127.0.0.1:8081/v1/menu_opcion_padre/ArbolMenus/'+row.entity.Nombre+'')
             .then(function(response) {
                 $scope.opciones = response.data;
                 console.log($scope.opciones);
@@ -117,7 +116,7 @@ angular.module('javierApp')
           $scope.dataForTheTree = {};
 
           //Carga los menus por aplicación
-          $http.get('http://127.0.0.1:8081/v1/menu_opcion_padre/MenusPorAplicacion/' + row.entity.Aplicacion.Id +'').then(function(response) {
+          $http.get('http://127.0.0.1:8081/v1/perfil_x_menu_opcion/MenusPorAplicacion/' + row.entity.Aplicacion.Id +'').then(function(response) {
             $scope.dataForTheTree = response.data;
             });
       };
@@ -136,14 +135,7 @@ angular.module('javierApp')
                 });
 
               }   
-      };
-
-
-
-                 
-
-
-              
+      };           
     
     $scope.change_state = function(){
       if ($scope.on_off){

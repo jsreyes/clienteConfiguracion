@@ -15,14 +15,12 @@ angular.module('javierApp')
   $scope.confirmar = function(){
     var json = {"Nombre":$scope.aplicacion.nombre,
                 "Descripcion": $scope.aplicacion.descripcion,
-                "Dominio": $scope.aplicacion.dominio,
-                "Ip": $scope.aplicacion.ip};
+                "Dominio": $scope.aplicacion.dominio};
 	
       $http.post('http://127.0.0.1:8081/v1/aplicacion/',json)
       .then(function(){
           alert ("Guardo exitosamente");
           //Limpia los campos despues de hacer una inserción
-          //$scope.reset(crearParametro);
           $scope.aplicacion = {};
       });
     }

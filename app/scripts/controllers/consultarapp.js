@@ -23,7 +23,6 @@ controller('ConsultarappCtrl', function ($scope, $http) {
           { field: 'Nombre', cellTemplate: tmpl },
           { field: 'Descripcion', cellTemplate: tmpl, displayName: 'Descripción' },
           { field: 'Dominio', cellTemplate: tmpl},
-          { field: 'Ip', cellTemplate: tmpl },
           { field: 'Acciones', 
           cellTemplate: '<button class="btn btn-danger btn-circle" ng-click="grid.appScope.deleteRow(row)"><i class="glyphicon glyphicon-trash"></i></button>&nbsp;<button type="button" class="btn btn-success btn-circle" ng-click="grid.appScope.actualizar(row)"><i class="glyphicon glyphicon-pencil"></i></button>'}
           ]
@@ -61,8 +60,8 @@ controller('ConsultarappCtrl', function ($scope, $http) {
              $http.delete('http://127.0.0.1:8081/v1/aplicacion/' + row.entity.Id)
                 .then(function(response) {
 
-                   //Condicional
-                  if (response === "OK"){
+                  //Condicional
+                  if (response.data === "OK"){
                         //$scope.gridOptions1.data.splice(index, 1); Sirve para hacer el borrado desde la vista
                         alert("La aplicacion se ha borrado exitosamente");
                         //Función que obtiene todas las aplicaciones
