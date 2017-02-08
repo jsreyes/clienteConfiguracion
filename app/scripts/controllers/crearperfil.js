@@ -93,7 +93,8 @@ angular.module('javierApp')
 		          $scope.perfil = {};
 		          $scope.aplicacion = {}; 
 		          $scope.menus = {}; 
-		          $scope.menu_x_perfil = [];  
+		          $scope.menu_x_perfil = []; 
+		          $scope.dataForTheTree = []; 
 
 		      });
 		    }

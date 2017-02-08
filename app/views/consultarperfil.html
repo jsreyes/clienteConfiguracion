@@ -39,7 +39,7 @@
          expanded-nodes="expandedNodes"
          >
 
-         Menu: {{node.Nombre}} 
+         Menú: {{node.Nombre}} 
         </treecontrol>   
 
       </div>
@@ -53,16 +53,17 @@
            on-selection="showSelected(node)"
            selected-node="node1"
            selected-nodes="nuevo_menu_x_perfil"
-           expanded-nodes="expandedNodes"
            >
 
-           Menu: {{node.Nombre}} 
+           Menú: {{node.Nombre}} 
           </treecontrol> 
 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
         <button type="button" class="btn btn-primary" ng-click="guardar_nuevos()">Guardar nuevos</button>
+        <!--habilitar Boton cuando se tenga la función de borrado-->
+        <!--<button type="button" class="btn btn-primary" ng-click="borrar()">Borrar</button>-->
       </div>
     </div>
   </div>
