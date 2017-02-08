@@ -1,0 +1,66 @@
+<div class="jumbotron">
+
+        <div class="panel panel-success panel-body">
+            <!--Titulo-->
+            <h1 class="panel-title page-header text-center">Registrar par&aacute;metro</h1><br><br>
+            <div class="container">
+              <form class="form-horizontal" name="crearParametro">
+
+                <!--Campo para el nombre del parámetro-->
+
+                <div class="col-md-12 row line">
+                  <div class="col-sm-2">
+                    <label><h5><strong>Nombre:</strong><h5></label>
+                    </div>
+                    <div class="col-sm-10">
+                      <input  class="form-control" ng-model="parametro.nombre" placeholder="Ingrese el nombre del par&aacute;metro">
+                    </input>
+                  </div>
+                </div>
+
+                <!--Campo para el valor de la APP-->
+                <div class="col-md-12 row line">
+                  <div class="col-sm-2">
+                    <label><h5><strong>Valor:</strong><h5></label>
+                    </div>
+                    <div class="col-sm-10">
+                      <input  class="form-control" ng-model="parametro.valor" placeholder="Ingrese el valor del par&aacute;metro">
+                      </input>
+                    </div>
+                  </div>
+
+                  <!--Seleccionar APP relacionada al parámetro-->
+
+                  <div class="col-md-12 row line">
+                    <div class="col-sm-2">
+                      <label><h5><strong>Aplicaci&oacute;n:</strong><h5></label>
+                      </div>
+                      <div class="col-sm-10">
+                           <select class="form-control"  ng-model="aplicacion" ng-options="option.Nombre for option in aplicaciones"> 
+                              <option value="">--Elija la aplicaci&oacute;n a la cúal pertenecera el par&aacute;metro--</option>   
+                            </select>
+
+                      </div>
+                     </div>
+                 
+
+
+                     <br><br><div class="col-md-12 text-center row line">
+                        <div class="col-sm-6">
+                          <input type="submit" class="btn btn-lg btn-primary" value="Confirmar" ng-click="confirmar()">
+                        </div>
+                        
+                        <div class="col-sm-6">
+                          <button class="btn btn-lg btn-danger" type="reset" ng-click="reset(crearParametro)">Cancelar</button>
+                        </div>
+                      </div>
+
+
+              </form>
+            </div>
+            </div>
+                  
+
+                
+
+

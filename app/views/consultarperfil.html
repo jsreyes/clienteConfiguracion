@@ -1,0 +1,69 @@
+<!--Vista para consultar los perfiles de las aplicaciones-->
+<div class="container">
+        <br><br>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <strong><center>Consultar Perfiles</center></strong>
+        </div>
+        <div class="panel-body">
+    			<div id="grid1" ui-grid="gridOptions1" align='center'></div>
+        </div>
+        <div class="panel-footer">
+            Los perfiles que se han registrado se visualizan en esta tabla.
+        </div>
+    </div>    
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLongTitle">Menús por perfil(es)</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label>Perfil:<p>{{prueba.Nombre}}</p></label><br>
+        <label>Menús asociados: </label>
+
+        <treecontrol class="tree-classic"
+         tree-model="opciones"
+         options="treeOptions"
+         on-selection="showSelected(node)"
+         selected-node="node1"
+         selected-nodes="menu_x_perfil"
+         expanded-nodes="expandedNodes"
+         >
+
+         Menu: {{node.Nombre}} 
+        </treecontrol>   
+
+      </div>
+      ---------------------------------------------------------------------------
+      <!--Div para cargar los menús de la app que no estan asociadas al perfil-->
+      <div class="modal-body">
+        <label>Menús asociados a la aplicación: </label>
+         <treecontrol class="tree-classic"
+           tree-model="dataForTheTree"
+           options="treeOptions"
+           on-selection="showSelected(node)"
+           selected-node="node1"
+           selected-nodes="nuevo_menu_x_perfil"
+           expanded-nodes="expandedNodes"
+           >
+
+           Menu: {{node.Nombre}} 
+          </treecontrol> 
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" ng-click="guardar_nuevos()">Guardar nuevos</button>
+      </div>
+    </div>
+  </div>
+</div>
