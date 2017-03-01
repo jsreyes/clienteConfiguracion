@@ -40,7 +40,8 @@ angular.module('javierApp')
         enableSorting: true,
         enableFiltering: true,
         columnDefs: [
-          { field: 'Nombre',  cellTemplate: tmpl },
+          { field: 'Nombre', cellTemplate: tmpl },
+          { field: 'Permiso', cellTemplate: tmpl },
           { field: 'Aplicacion.Nombre',  displayName: 'Aplicación',  enableCellEdit: false, cellTemplate: tmpl},
           { field: 'Acciones', 
           cellTemplate: '<button class="btn btn-danger btn-circle" ng-click="grid.appScope.deleteRow(row)" type="submit"><i class="glyphicon glyphicon-trash"></i></button>&nbsp;<button type="button" class="btn btn-success btn-circle" ng-click="grid.appScope.actualizar(row); change_state()" ng-show="on_off"><i class="glyphicon glyphicon-pencil"></i></button>&nbsp;<button type="button" class="btn btn-success btn-circle" ng-click="grid.appScope.actualizar(row);change_state()" ng-hide="on_off"><i class="glyphicon glyphicon-pencil"></i></button>&nbsp;<button type="button" class="btn btn-primary btn-circle" ng-click="grid.appScope.visualizar(row);grid.appScope.showAdvanced($event, row)" data-toggle="modal" data-target="#exampleModalLong"><i class="glyphicon glyphicon-eye-open"></i></button>'}

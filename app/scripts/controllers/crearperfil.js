@@ -46,8 +46,7 @@ angular.module('javierApp')
     		$scope.menus = {};
 
     	}else{
-    		//Carga los menus por aplicación
-    		
+    		//Carga los menus por aplicación    		
     		$http.get('http://127.0.0.1:8081/v1/menu_opcion/?query=Aplicacion.Id:' + $scope.aplicacion.Id +'').then(function(response) {
 				$scope.menus = response.data;
 				//console.log($scope.menus[0].Id)
@@ -67,8 +66,9 @@ angular.module('javierApp')
     /*Función para insertar aplicaciones*/
 	  $scope.confirmar = function(){
 	    var json = {};
-	    json.Nombre=$scope.perfil.nombre;
-	    json.Aplicacion= $scope.aplicacion;
+	    json.Nombre = $scope.perfil.nombre;
+	    json.Permiso = $scope.perfil.permiso
+	    json.Aplicacion = $scope.aplicacion;
 	     
 	    $http.post('http://127.0.0.1:8081/v1/perfil/',json)
 		    .then(function(response){
