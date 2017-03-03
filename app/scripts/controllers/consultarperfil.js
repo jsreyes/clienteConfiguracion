@@ -133,6 +133,9 @@ angular.module('javierApp')
               for(var i = 0; i < $scope.nuevo_menu_x_perfil.length; i++){
 
 
+                console.log($scope.nuevo_menu_x_perfil[i]);
+                
+
                 //Se realiza la petición POST, para guardar los menús asociados al perfil
                 $http.post('http://127.0.0.1:8081/v1/perfil_x_menu_opcion/', {"Perfil": $scope.prueba, "Opcion" :  $scope.nuevo_menu_x_perfil[i]})
                   .then(function(response){
@@ -165,7 +168,7 @@ angular.module('javierApp')
 
               }  
 
-                console.log($scope.nuevo_menu_x_perfil);
+               
 
       };  
 
